@@ -1,2 +1,3 @@
 # ProyectoREx
 Es un juego
+funcionara...
