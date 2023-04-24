@@ -56,7 +56,18 @@ def eat():
         y = random.randint(-280,280)
         apple.goto(x,y)
         tail()
-        
+
+
+def colision():
+    if head.xcor() > 280 or head.xcor() < -280 or head.ycor() > 280 or head.ycor() < -280:
+        time.sleep(1)
+        head.goto(0,0)
+        head.direction = "stop"
+        for taild in tails:
+            taild.goto(1000, 1000)
+        tails.clear()
+
+
 def tail():
     snaketail = turtle.Turtle()
     snaketail.speed(0)
@@ -107,6 +118,7 @@ while True:
     eat()
     movtail()
     movSnake()
+    colision()
     
   
     
