@@ -1,5 +1,6 @@
 import turtle
 import time
+import random
 
 #CONSTANTS
 delay_game = 0.1
@@ -41,6 +42,12 @@ def Left():
     head.direction = "Left"
 def Right(): 
     head.direction = "Right"
+    
+def eat():
+    if head.distance(apple) < 20:
+        x = random.randint(-280,280)
+        y = random.randint(-280,280)
+        apple.goto(x,y)
 
 
 def movSnake():
@@ -66,6 +73,7 @@ window.onkeypress(Right, "Right")
 
 while True:
     window.update()
+    eat()
     movSnake()
     
     time.sleep(delay_game)
