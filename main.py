@@ -58,7 +58,7 @@ def tail():
     snaketail.speed(0)
     snaketail.shape("square")
     snaketail.color("grey")
-    snaketail.penup()
+    snaketail.penup() 
     tails.append(snaketail)
     
 def movtail():    
@@ -98,10 +98,12 @@ window.onkeypress(Right, "Right")
 window.onkeypress(Exit_game, "Escape")
 
 while True:
-    movSnake()
+    
+    window.update()
     eat()
     movtail()
-    window.update()
+    movSnake()
+    
   
     
     time.sleep(delay_game)
