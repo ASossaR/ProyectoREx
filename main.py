@@ -31,17 +31,21 @@ apple.goto(0,100)
 #Variables's Snake
 head.direction = "stop"
 head_speed = 20
-
+head_dir_pas = "Stop"
 
 #Functions
-def Up(): 
-    head.direction = "Up"
+def Up():
+    if  head.direction != "Down":
+        head.direction = "Up"
 def Down(): 
-    head.direction = "Down"
+    if  head.direction != "Up":
+        head.direction = "Down"
 def Left(): 
-    head.direction = "Left"
+    if  head.direction != "Right":
+        head.direction = "Left"
 def Right(): 
-    head.direction = "Right"
+    if  head.direction != "Left":
+        head.direction = "Right"
 def Exit_game(): 
     turtle.bye()
 
@@ -81,10 +85,10 @@ def movSnake():
     if head.direction == "Down": 
         y = head.ycor()
         head.sety(y - head_speed)
-    if head.direction == "Left": 
+    if head.direction == "Left":
         x = head.xcor()
         head.setx(x - head_speed)
-    if head.direction == "Right": 
+    if head.direction == "Right":    
         x = head.xcor()
         head.setx(x + head_speed)
 
