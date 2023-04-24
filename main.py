@@ -29,7 +29,7 @@ apple.goto(0,100)
 
 #Variables's Snake
 head.direction = "stop"
-head_speed = 20
+head_speed = 10
 
 
 #Functions
