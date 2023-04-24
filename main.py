@@ -3,8 +3,7 @@ import time
 import random
 
 #CONSTANTS
-delay_game = 0.1
-
+delay_game = 0.15
 tails = []
 
 #Window config
@@ -13,7 +12,6 @@ window.title("Snake")
 window.bgcolor("black")
 window.setup(width = 600, height = 600)
 window.tracer(0)
-
 
 #Objects
 head = turtle.Turtle()
@@ -32,7 +30,7 @@ apple.goto(0,100)
 
 #Variables's Snake
 head.direction = "stop"
-head_speed = 10
+head_speed = 20
 
 
 #Functions
@@ -44,7 +42,10 @@ def Left():
     head.direction = "Left"
 def Right(): 
     head.direction = "Right"
-    
+def Exit_game(): 
+    turtle.bye()
+
+
 def eat():
     if head.distance(apple) < 20:
         x = random.randint(-280,280)
@@ -93,11 +94,16 @@ window.onkeypress(Up, "Up")
 window.onkeypress(Down, "Down")
 window.onkeypress(Left, "Left")
 window.onkeypress(Right, "Right")
+window.onkeypress(Right, "Right")
+window.onkeypress(Exit_game, "Escape")
 
 while True:
-    window.update()
-    eat()
     movSnake()
+    eat()
     movtail()
+    window.update()
+  
     
     time.sleep(delay_game)
+
+turtle. mainloop()
