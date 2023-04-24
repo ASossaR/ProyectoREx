@@ -26,7 +26,7 @@ apple.speed(0)
 apple.shape("circle")
 apple.color("red")
 apple.penup()
-apple.goto(0,100)
+apple.goto(0,200)
 
 #Variables's Snake
 head.direction = "stop"
@@ -121,7 +121,6 @@ while True:
     colision()
     
   
-    
     time.sleep(delay_game)
 
 turtle. mainloop()
