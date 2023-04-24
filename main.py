@@ -5,6 +5,8 @@ import random
 #CONSTANTS
 delay_game = 0.1
 
+tails = []
+
 #Window config
 window = turtle.Screen()
 window.title("Snake")
@@ -48,6 +50,27 @@ def eat():
         x = random.randint(-280,280)
         y = random.randint(-280,280)
         apple.goto(x,y)
+        tail()
+        
+def tail():
+    snaketail = turtle.Turtle()
+    snaketail.speed(0)
+    snaketail.shape("square")
+    snaketail.color("grey")
+    snaketail.penup()
+    tails.append(snaketail)
+    
+def movtail():    
+    totaltails = len(tails)
+    for index in range(totaltails -1, 0, -1):
+        x = tails[index - 1].xcor()
+        y = tails[index - 1].ycor()
+        tails[index].goto(x,y)
+    
+    if totaltails > 0:
+        x = head.xcor()
+        y = head.ycor()
+        tails[0].goto(x,y) 
 
 
 def movSnake():
@@ -75,5 +98,6 @@ while True:
     window.update()
     eat()
     movSnake()
+    movtail()
     
     time.sleep(delay_game)
