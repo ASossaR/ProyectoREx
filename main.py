@@ -26,7 +26,6 @@ head_speed = 20
 
 
 #Functions
-
 def Up(): 
     head.direction = "Up"
 def Down(): 
@@ -51,6 +50,7 @@ def movSnake():
         x = head.xcor()
         head.setx(x + head_speed)
 
+#Listen keyboard
 window.listen()
 window.onkeypress(Up, "Up")
 window.onkeypress(Down, "Down")
@@ -60,4 +60,5 @@ window.onkeypress(Right, "Right")
 while True:
     window.update()
     movSnake()
+    
     time.sleep(delay_game)
