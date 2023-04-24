@@ -20,6 +20,13 @@ head.color("white")
 head.penup()
 head.goto(0,0)
 
+apple = turtle.Turtle()
+apple.speed(0)
+apple.shape("circle")
+apple.color("red")
+apple.penup()
+apple.goto(0,100)
+
 #Variables's Snake
 head.direction = "stop"
 head_speed = 20
