@@ -1,3 +1,2 @@
 # ProyectoREx
-Es un juego
-funcionara...
+Es el juego de snake.
